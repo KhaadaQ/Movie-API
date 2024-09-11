@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet" />
+  <script type="module" src="index.ts"></script>
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg bg-dark px-5">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../logo.png" width="80px" height="30px" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <div class="dropdown me-2">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Select Category
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+            <li><a class="dropdown-item" href="#" data-category="popular">Popular</a></li>
+            <li><a class="dropdown-item" href="#" data-category="upcoming">Upcoming</a></li>
+            <li><a class="dropdown-item" href="#" data-category="now_playing">Now Playing</a></li>
+            <li><a class="dropdown-item" href="#" data-category="top_rated">Top Rated</a></li>
+          </ul>
+        </div>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-warning btn-search rounded" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <main class="container-fluid px5 pt-3 pb-5">
+    <div class="mb-3">
+      <input type="radio" class="btn-check" name="options-base" id="layout-grid" autocomplete="off" checked />
+      <label for="layout-grid" class="btn">
+        <img src="layout-grid.svg" alt="">
+      </label>
+      <input type="radio" class="btn-check" name="options-base" id="layout-list" autocomplete="off" />
+      <label for="layout-list" class="btn">
+        <img src="layout-list.svg" alt="">
+      </label>
+    </div>
+   <div class="row g-4" id="movies-container">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/13/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/14/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/15/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/16/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/17/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/18/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/19/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/20/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/21/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/22/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/23/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/24/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/25/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/26/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/27/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/28/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/29/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/30/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/31/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+    <div class="card h-100">
+      <img src="https://picsum.photos/id/32/200/300" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<div class="pagination-container d-flex justify-content-center my-4">
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item">
+        <button id="prevPage" class="page-link">Previous</button>
+      </li>
+      <li class="page-item disabled">
+        <span id="currentPage" class="page-link">1</span>
+      </li>
+      <li class="page-item">
+        <button id="nextPage" class="page-link">Next</button>
+      </li>
+    </ul>
+  </nav>
+</div>
+  </main>
+  <footer>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark px-5">
+    <div class="container-fluid px-0">
+          <p class="text-secondary mb-0" >&copy; 2023 Company, Inc</p>
+          <a href="#" class="navbar-brand m-0 p-0">
+          <img src="../logo.png" alt="Logo" class="logo">
+          </a>
+        
+          <ul class="navbar-nav mb-2 mb-lg-0">             
+            </li>
+            <li class="nav-item"><a class="nav-link py-0 active" aria-current="page" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link py-0" href="#">Features</a></li>
+            <li class="nav-item"><a class="nav-link py-0" href="#">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link py-0" href="#">FAQs</a></li>
+            <li class="nav-item"><a class="nav-link py-0" href="#">About</a></li>
+          </ul>
+    </div>
+    </nav>
+  </footer>
+
+
+
+</body>
+
+</html>
