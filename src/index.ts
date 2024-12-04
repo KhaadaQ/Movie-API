@@ -99,7 +99,6 @@ function displayMovieDetails(movie: MovieDetails): void {
 }
 
 
-// Función para cargar la lista de películas
 async function getPage(page: number): Promise<void> {
     const movies = await fetchMovies(page);
     displayMovies(movies);
@@ -107,13 +106,11 @@ async function getPage(page: number): Promise<void> {
     updateBtn(total_pages);
 }
 
-// Función para cargar los detalles de una película
 async function loadMovieDetails(movieId: string): Promise<void> {
     const movie = await fetchMovieDetails(movieId);
     displayMovieDetails(movie);
 }
 
-// Actualizar los botones de paginación
 function updateBtn(total_pages: number): void {
     if (currentPage === 1) {
         prevPageButton?.setAttribute('disabled', 'true');
@@ -128,12 +125,10 @@ function updateBtn(total_pages: number): void {
     }
 }
 
-// Verificar si hay un `movieId` en la URL y cargar la página adecuada
 document.addEventListener('DOMContentLoaded', () => {
     const movieId = getMovieIdFromUrl();
 
     if (movieId) {
-        // Cargar detalles de la película
         loadMovieDetails(movieId);
 
         if (layoutButtonsContainer) {
@@ -180,7 +175,6 @@ categoryDropdownItems.forEach(item => {
     });
 });
 
-// Event listeners para los botones de paginación
 nextPageButton?.addEventListener('click', () => {
     if (currentPage < total_pages) {
         currentPage++;
